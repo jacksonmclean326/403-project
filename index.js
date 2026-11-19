@@ -181,7 +181,7 @@ app.post("/deleteUser/:email", requireLogin, async (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  res.session.destroy(() => {
+  req.session.destroy(() => {
     res.redirect("/");
   });
 });
